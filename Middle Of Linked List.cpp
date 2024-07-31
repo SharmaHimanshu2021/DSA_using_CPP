@@ -25,19 +25,22 @@ public:
 */
 
 Node *findMiddle(Node *head) {
-   
-    if (head == nullptr) return nullptr;  
-
-    Node* slow = head;
-    Node* fast = head;
-
-    
-    while (fast != nullptr && fast->next != nullptr) {
-        slow = slow->next;
-        fast = fast->next->next;
+  
+    int count=0;
+    if(head==NULL){
+        return NULL;
     }
-
-    
-    return slow;
-
+    Node *p=head;
+    while(p!=NULL){
+        p=p->next;
+        count++;
+    }
+    int mid=count/2;
+    p=head;
+    int i=0;
+    while(i<mid){
+        p=p->next;
+        i++;
+    }
+    return p;
 }
