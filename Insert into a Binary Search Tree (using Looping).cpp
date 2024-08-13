@@ -13,7 +13,8 @@ public:
                     break;
                 }
                 current = current->left;
-            } else {
+            } 
+            else {
                 if (!current->right) {
                     current->right = new TreeNode(val);
                     break;
